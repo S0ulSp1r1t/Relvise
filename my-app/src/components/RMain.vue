@@ -302,4 +302,5 @@ export default {
     color: #737373;
   }
 }
+//тут натыкал
 </style>
