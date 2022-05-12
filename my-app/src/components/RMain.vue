@@ -134,6 +134,9 @@
         </div>
       </div>
     </div>
+    <div class="main__advantages advantages">
+      <div class="advantages__container _container"></div>
+    </div>
   </main>
 </template>
 
@@ -246,7 +249,9 @@ export default {
 
 .main {
   &__services {
+    position: relative;
     margin-top: -111px;
+    z-index: 2;
   }
 }
 .services {
@@ -255,22 +260,35 @@ export default {
 
   &__body {
     display: flex;
-    margin: 0 -15px;
+    margin: 0 -15px -20px;
     flex-wrap: wrap;
   }
 
   &__column {
     padding: 0 15px;
     flex: 0 1 33.3333%;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 992px) {
+    &__column {
+      flex: 0 1 50%;
+    }
+  }
+
+  @media (max-width: 594px) {
+    &__column {
+      flex: 0 1 100%;
+    }
   }
 
   &__item {
-    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
-    padding: 35px 40px;
-    background: #fff;
   }
 }
 .item-service {
+  box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+  padding: 35px 40px;
+  background: rgb(255, 255, 255);
   &:hover {
     background: #0d5c63;
     svg {
@@ -280,9 +298,9 @@ export default {
       color: #fff;
     }
   }
-  > *:not(:last-child) {
-    padding-bottom: 10px;
-  }
+  //> *:not(:last-child) {
+  //  padding-bottom: 10px;
+  //}
   &__icon {
   }
 
