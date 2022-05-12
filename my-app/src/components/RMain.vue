@@ -1,12 +1,12 @@
 <template>
-  <main class="main">
-    <div class="main__main-block main-block">
+  <main class="page">
+    <div class="page__main-block main-block">
       <div class="main-block__container _container">
         <div class="main-block__body">
           <h1 class="main-block__title">Finance and Consultancy Solution</h1>
-          <div class="main-block__description">
+          <h4 class="main-block__description">
             We know how large objects will act, but things on a small scale.
-          </div>
+          </h4>
           <div class="main-block__btns">
             <my-button-1 class="main-block__my-button-1"
               >Get Quote Now</my-button-1
@@ -21,7 +21,7 @@
         <img src="../assets/images/background.jpg" alt="background" />
       </div>
     </div>
-    <div class="main__services services">
+    <section class="page__services services">
       <div class="services__container _container">
         <div class="services__body">
           <div class="services__column">
@@ -51,7 +51,7 @@
                   </defs>
                 </svg>
               </div>
-              <div class="item-service__title">Environmental Consulting</div>
+              <h3 class="item-service__title">Environmental Consulting</h3>
               <div class="item-service__description">
                 We focus on ergonomics and meeting you where you work.
               </div>
@@ -83,7 +83,7 @@
                   </defs>
                 </svg>
               </div>
-              <div class="item-service__title">Finance and consultancy</div>
+              <h3 class="item-service__title">Finance and consultancy</h3>
               <div class="item-service__description">
                 Just type what's on your mind and we'll get you there.
               </div>
@@ -123,9 +123,7 @@
                   </defs>
                 </svg>
               </div>
-              <div class="item-service__title">
-                Financial Services Consulting
-              </div>
+              <h3 class="item-service__title">Financial Services Consulting</h3>
               <div class="item-service__description">
                 the quick fox jumps over the lazy dog
               </div>
@@ -133,10 +131,85 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="main__advantages advantages">
-      <div class="advantages__container _container"></div>
-    </div>
+    </section>
+    <section class="page__advantages advantages">
+      <div class="advantages__container _container">
+        <div class="advantages__header header-block">
+          <h2 class="header-block__title">Designing Better Experience</h2>
+          <div class="header-block__description">
+            Problems trying to resolve the conflict between the two major realms
+            <br />
+            of Classical physics: Newtonian mechanics
+          </div>
+        </div>
+        <div class="advantages__body">
+          <div class="advantages__column">
+            <div class="advantages__item">
+              <div class="advantages__icon">
+                <img src="../assets/images/advantages/01.svg" alt="advantage" />
+              </div>
+              <h2 class="advantages__value">972 +</h2>
+              <div class="advantages__text">Consumer Products</div>
+            </div>
+          </div>
+          <div class="advantages__column">
+            <div class="advantages__item">
+              <div class="advantages__icon">
+                <img src="../assets/images/advantages/02.svg" alt="advantage" />
+              </div>
+              <h2 class="advantages__value">181 +</h2>
+              <div class="advantages__text">Financial Services</div>
+            </div>
+          </div>
+          <div class="advantages__column">
+            <div class="advantages__item">
+              <div class="advantages__icon">
+                <img src="../assets/images/advantages/03.svg" alt="advantage" />
+              </div>
+              <h2 class="advantages__value">98%</h2>
+              <div class="advantages__text">Environmental</div>
+            </div>
+          </div>
+          <div class="advantages__column">
+            <div class="advantages__item">
+              <div class="advantages__icon">
+                <img src="../assets/images/advantages/04.svg" alt="advantage" />
+              </div>
+              <h2 class="advantages__value">746 +</h2>
+              <div class="advantages__text">Business & Finance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <secction class="page__practice practice">
+      <div class="practice__container _container">
+        <div class="practice__header-block header-block">
+          <h2 class="header-block__title">Practice Advice</h2>
+          <div class="header-block__description">
+            Problems trying to resolve the conflict between the two major realms
+            <br />
+            of Classical physics: Newtonian mechanics
+          </div>
+        </div>
+        <div class="practice__body">
+          <div class="practice__column">
+            <div class="practice__item">
+              <div class="practice__text-container">
+                <h5 class="practice__title">A single source of truth</h5>
+                <div class="practice__description">
+                  Newton thought that light was made up of particles, but then
+                  it was discovered
+                </div>
+              </div>
+              <div class="practice__img">
+                <img src="../assets/images/practice/01.jpg" alt="practice" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </secction>
   </main>
 </template>
 
@@ -152,12 +225,47 @@ export default {
 </script>
 
 <style lang="scss">
-//--------------мэйн блок-----------------------------------------------------------------------------
-.main {
+body {
+  background: #fafafa;
+}
+
+//--------------страницы-----------------------------------------------------------------------------
+.page {
   flex: 1 1 auto;
   &__main-block {
   }
+  &__services {
+  }
+  &__advantages {
+  }
+  &__practice {
+  }
 }
+
+//--------------хедер-----------------------------------------------------------------------------
+.header-block {
+  letter-spacing: 0.2px;
+  text-align: center;
+
+  &__title {
+    line-height: 142%;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 10px;
+    &__title:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    line-height: 142%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #737373;
+  }
+}
+
+//--------------мэйн блок-----------------------------------------------------------------------------
 .main-block {
   position: relative;
   &__container {
@@ -234,11 +342,13 @@ export default {
 
 .main-block__my-button-1 {
   margin: 10px 0;
+
   @media (max-width: 390px) {
     & {
       flex: 1 1 100%;
     }
   }
+
   @media (min-width: 390px) {
     &:not(:last-child) {
       margin-right: 10px;
@@ -246,15 +356,11 @@ export default {
   }
 }
 //--------------сервис блок-----------------------------------------------------------------------------
-
-.main {
-  &__services {
-    position: relative;
-    margin-top: -111px;
-    z-index: 2;
-  }
-}
 .services {
+  position: relative;
+  margin-top: -111px;
+  z-index: 2;
+
   &__container {
   }
 
@@ -274,9 +380,13 @@ export default {
     &__column {
       flex: 0 1 50%;
     }
+
+    &__column:last-child {
+      flex: 0 1 100%;
+    }
   }
 
-  @media (max-width: 594px) {
+  @media (max-width: 652px) {
     &__column {
       flex: 0 1 100%;
     }
@@ -285,22 +395,12 @@ export default {
   &__item {
   }
 }
+
 .item-service {
   box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
   padding: 35px 40px;
   background: rgb(255, 255, 255);
-  &:hover {
-    background: #0d5c63;
-    svg {
-      fill: #fff;
-    }
-    div {
-      color: #fff;
-    }
-  }
-  //> *:not(:last-child) {
-  //  padding-bottom: 10px;
-  //}
+
   &__icon {
   }
 
@@ -319,6 +419,118 @@ export default {
     letter-spacing: 0.2px;
     color: #737373;
   }
+
+  &:hover {
+    background: #0d5c63;
+    svg {
+      fill: #fff;
+    }
+    h3,
+    div {
+      color: #fff;
+    }
+  }
 }
-//тут натыкал
+
+//--------------заслуги блок-----------------------------------------------------------------------------
+
+.advantages {
+  padding: 80px 0;
+  &__container {
+  }
+
+  &__header {
+  }
+
+  &__body {
+    display: flex;
+    //justify-content: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    padding: 0 -15px;
+  }
+
+  &__column {
+    padding: 0 15px;
+    flex: 0 1 25%;
+  }
+
+  @media (max-width: 1064px) and (min-width: 808px) {
+    &__column {
+      flex: 0 1 33.333%;
+    }
+    &__column:last-child {
+      flex: 0 1 100%;
+    }
+  }
+
+  @media (max-width: 806px) and (min-width: 550px) {
+    &__column {
+      flex: 0 1 50%;
+    }
+  }
+
+  @media (max-width: 548px) {
+    &__column {
+      flex: 0 1 100%;
+    }
+  }
+
+  &__item {
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+    &__item > * :not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__icon {
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 142%;
+    letter-spacing: 0.2px;
+  }
+
+  &__text {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.1px;
+    color: #737373;
+  }
+}
+
+//--------------практика блок-----------------------------------------------------------------------------
+.practice {
+  &__container {
+  }
+
+  &__header-block {
+  }
+
+  &__body {
+  }
+
+  &__column {
+  }
+
+  &__item {
+  }
+
+  &__text-container {
+  }
+
+  &__title {
+  }
+
+  &__description {
+  }
+
+  &__img {
+  }
+}
 </style>
