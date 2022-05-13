@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <r-header />
-    <r-main />
+    <r-main :itemsService="itemsService" />
     <r-footer />
   </div>
 </template>
@@ -17,6 +17,30 @@ export default {
     RHeader,
     RFooter,
     RMain,
+  },
+  data() {
+    return {
+      itemsService: [
+        {
+          id: 1,
+          svg: "01.svg",
+          title: "Environmental Consulting",
+          description: "We focus on ergonomics and meeting you where you work.",
+        },
+        {
+          id: 2,
+          svg: "02.svg",
+          title: "Finance and consultancy ",
+          description: "Just type what's on your mind and we'll get you there.",
+        },
+        {
+          id: 3,
+          svg: "03.svg",
+          title: "Financial Services Consulting",
+          description: "the quick fox jumps over the lazy dog",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -37,6 +61,7 @@ export default {
   padding: 0 15px;
 }
 ._ibg {
+  position: relative;
 }
 ._ibg img {
   position: absolute;
