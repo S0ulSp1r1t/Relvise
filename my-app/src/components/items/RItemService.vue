@@ -27,6 +27,7 @@ export default {
 
 <style lang="scss">
 .item-service {
+  display: block;
   box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
   padding: 35px 40px;
   background: rgb(255, 255, 255);

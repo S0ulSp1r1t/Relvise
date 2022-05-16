@@ -222,9 +222,10 @@
         </template>
         <div class="contacts__items">
           <r-item-contacts
+            class="contacts__item"
             v-for="contact in contacts"
             :key="contact.id"
-            @pushContacts1="pushContacts"
+            :contact="contact"
           />
         </div>
       </div>
@@ -305,7 +306,29 @@ export default {
           img: "04.jpg",
         },
       ],
-      contacts: [],
+      contacts: [
+        {
+          id: 1,
+          logo: "01.svg",
+          email_1: "georgia.young@example.com",
+          email_2: "georgia.young@ple.com",
+          action: "Get Support",
+        },
+        {
+          id: 2,
+          logo: "02.svg",
+          email_1: "georgia.young@example.com",
+          email_2: "georgia.young@ple.com",
+          action: "Get Support",
+        },
+        {
+          id: 3,
+          logo: "03.svg",
+          email_1: "georgia.young@example.com",
+          email_2: "georgia.young@ple.com",
+          action: "Get Support",
+        },
+      ],
     };
   },
   props: {
@@ -314,12 +337,6 @@ export default {
       required: true,
     },
   },
-  methods: {
-    pushContacts(contacts) {
-      console.log(contacts);
-    },
-  },
-  mounted() {},
 };
 </script>
 
@@ -352,6 +369,9 @@ body {
     padding: 40px 0;
   }
   &__subscribe {
+    padding-bottom: 40px;
+  }
+  &__contacts {
     padding-bottom: 40px;
   }
 }
@@ -796,6 +816,23 @@ body {
     color: #ffffff;
 
     cursor: pointer;
+  }
+}
+
+//====================contacts-================================
+.contacts {
+  &__container {
+  }
+
+  &__items {
+    display: flex;
+    margin-top: 40px;
+  }
+
+  &__item:hover {
+    &__items {
+      margin-top: 40px;
+    }
   }
 }
 </style>
