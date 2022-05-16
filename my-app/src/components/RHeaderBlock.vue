@@ -21,6 +21,9 @@ export default {
 
 <style lang="scss">
 .header-block {
+  & > * :not(:last-child) {
+    margin-bottom: 10px;
+  }
   letter-spacing: 0.2px;
   text-align: center;
 
@@ -29,12 +32,10 @@ export default {
     font-weight: 700;
     font-size: 40px;
     margin-bottom: 10px;
-    &__title:not(:last-child) {
-      margin-bottom: 10px;
-    }
   }
 
   &__description {
+    font-style: normal;
     line-height: 142%;
     font-weight: 500;
     font-size: 14px;

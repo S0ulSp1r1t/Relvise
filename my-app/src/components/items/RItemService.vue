@@ -2,7 +2,7 @@
   <div class="services__item item-service">
     <div class="item-service__icon">
       <img
-        :src="require('../assets/images/service/' + itemService.svg)"
+        :src="require('@/assets/images/service/' + itemService.svg)"
         alt="service"
       />
     </div>

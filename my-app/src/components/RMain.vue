@@ -29,7 +29,7 @@
             v-for="itemService in itemsService"
             :key="itemService.id"
           >
-            <r-item-service v-bind:itemService="itemService" />
+            <r-item-service :itemService="itemService" />
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@
             v-for="item in practiceItem"
             :key="item.id"
           >
-            <r-practice-item :practiceItemData="item" />
+            <r-item-practice :practiceItemData="item" />
           </div>
         </div>
       </div>
@@ -116,21 +116,48 @@
           </div>
         </template>
         <div class="about__body">
-          <div class="about__video"></div>
+          <div class="about__video">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/WSr93jBitwI"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
           <div class="about__content">
-            <div class="about__description">
-              <div class="about__title"></div>
-              <div class="about__subtitle"></div>
+            <h2 class="about__title">Most trusted in our field</h2>
+            <div class="about__sub-title">
+              Most calendars are designed for teams. Slate is designed for
+              freelancers who want a simple way to plan their schedule.
             </div>
             <div class="about__items">
               <div class="about__item item-about">
-                <div class="item-about__title">
-                  <div class="item-about__subtitle"></div>
+                <div class="item-about__icon">
+                  <img src="../assets/images/about/01.svg" alt="about" />
+                </div>
+                <div class="item-about__body">
+                  <div class="item-about__title">
+                    the quick fox jumps over the lazy dog
+                  </div>
+                  <div class="item-about__subtitle">
+                    Things on a very small scale ...
+                  </div>
                 </div>
               </div>
               <div class="about__item item-about">
-                <div class="item-about__title">
-                  <div class="item-about__subtitle"></div>
+                <div class="item-about__icon">
+                  <img src="../assets/images/about/02.svg" alt="about" />
+                </div>
+                <div class="item-about__body">
+                  <div class="item-about__title">
+                    the quick fox jumps over the lazy dog
+                  </div>
+                  <div class="item-about__subtitle">
+                    Things on a very small scale ...
+                  </div>
                 </div>
               </div>
             </div>
@@ -138,14 +165,79 @@
         </div>
       </div>
     </section>
+    <div class="page__clients clients">
+      <div class="clients__container _container">
+        <div class="clients__items">
+          <div class="clients__item">
+            <img src="../assets/images/clients/01.png" alt="client" />
+          </div>
+          <div class="clients__item">
+            <img src="../assets/images/clients/02.png" alt="client" />
+          </div>
+          <div class="clients__item">
+            <img src="../assets/images/clients/03.png" alt="client" />
+          </div>
+          <div class="clients__item">
+            <img src="../assets/images/clients/04.png" alt="client" />
+          </div>
+          <div class="clients__item">
+            <img src="../assets/images/clients/05.png" alt="client" />
+          </div>
+          <div class="clients__item">
+            <img src="../assets/images/clients/06.png" alt="client" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page__subscribe subscribe">
+      <div class="subscribe__container _container">
+        <div class="subscribe__body">
+          <div class="subscribe__title">
+            Subscribe For Latest <br />
+            Newsletter
+          </div>
+          <form action="#" class="subscribe__form">
+            <input
+              class="subscribe__email"
+              autocomplete="on"
+              type="email"
+              name="form"
+              required
+              placeholder="Your Email"
+            />
+            <button type="submit" class="subscribe__button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="page__contacts contacts">
+      <div class="contacts__container _container">
+        <template
+          v-for="headerBlockData in headerBlock"
+          :key="headerBlockData.id"
+        >
+          <div v-if="headerBlockData.id === 4">
+            <r-header-block :headerBlockDataCh="headerBlockData" />
+          </div>
+        </template>
+        <div class="contacts__items">
+          <r-item-contacts
+            v-for="contact in contacts"
+            :key="contact.id"
+            @pushContacts1="pushContacts"
+          />
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
 <script>
 import MyButton1 from "./UI/MyButton1.vue";
-import RItemService from "./RItemService.vue";
+import RItemService from "./items/RItemService.vue";
 import RHeaderBlock from "./RHeaderBlock.vue";
-import RPracticeItem from "./RPracticeItem.vue";
+import RItemPractice from "./items/RItemPractice.vue";
+import RItemContacts from "./items/RItemContacts.vue";
 
 export default {
   name: "RMain",
@@ -153,7 +245,8 @@ export default {
     MyButton1,
     RItemService,
     RHeaderBlock,
-    RPracticeItem,
+    RItemPractice,
+    RItemContacts,
   },
   data() {
     return {
@@ -162,33 +255,25 @@ export default {
           id: 1,
           title: "Designing Better Experience",
           description:
-            "Problems trying to resolve the conflict between the two major realms" +
-            <br /> +
-            "of Classical physics: Newtonian mechanics",
+            "Problems trying to resolve the conflict between the two major realms \n of Classical physics: Newtonian mechanics",
         },
         {
           id: 2,
           title: "Practice Advice",
           description:
-            "Problems trying to resolve the conflict between the two major realms" +
-            <br /> +
-            "of Classical physics: Newtonian mechanics",
+            "Problems trying to resolve the conflict between the two major realms \n of Classical physics: Newtonian mechanics",
         },
         {
           id: 3,
           title: "Who We Are",
           description:
-            "Problems trying to resolve the conflict between the two major realms" +
-            <br /> +
-            "of Classical physics: Newtonian mechanics",
+            "Problems trying to resolve the conflict between the two major realms \n of Classical physics: Newtonian mechanics",
         },
         {
           id: 4,
           title: "Get In Touch",
           description:
-            "Problems trying to resolve the conflict between the two major realms" +
-            <br /> +
-            "of Classical physics: Newtonian mechanics",
+            "Problems trying to resolve the conflict between the two major realms \n of Classical physics: Newtonian mechanics",
         },
       ],
       practiceItem: [
@@ -220,6 +305,7 @@ export default {
           img: "04.jpg",
         },
       ],
+      contacts: [],
     };
   },
   props: {
@@ -228,6 +314,12 @@ export default {
       required: true,
     },
   },
+  methods: {
+    pushContacts(contacts) {
+      console.log(contacts);
+    },
+  },
+  mounted() {},
 };
 </script>
 
@@ -255,6 +347,12 @@ body {
   }
   &__about {
     padding: 40px 0;
+  }
+  &__clients {
+    padding: 40px 0;
+  }
+  &__subscribe {
+    padding-bottom: 40px;
   }
 }
 
@@ -472,7 +570,7 @@ body {
 
   &__body {
     display: flex;
-    margin-top: 45px;
+    margin-top: 50px;
     padding: 0 -20px;
     flex-wrap: wrap;
   }
@@ -492,6 +590,212 @@ body {
     &__column {
       flex: 0 1 100%;
     }
+  }
+}
+
+//=====================о нас=================================================
+.about {
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    margin-top: 50px;
+  }
+
+  &__video {
+    flex: 0 0 55%;
+    position: relative;
+    padding: 0 57% 42.25% 0;
+  }
+
+  &__video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    margin-left: 20px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    color: #252b42;
+
+    margin-bottom: 10px;
+  }
+
+  &__sub-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #737373;
+  }
+
+  &__items {
+    > *:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    margin-top: 40px;
+  }
+
+  @media (max-width: 770px) {
+    &__body {
+      flex-wrap: wrap;
+    }
+
+    &__video {
+      flex: 0 0 100%;
+      margin-bottom: 20px;
+    }
+
+    &__content {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 516px) {
+    & > *:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &__body {
+      margin-top: 35px;
+    }
+
+    &__title {
+      margin-bottom: 5px;
+    }
+
+    &__items {
+      > *:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      margin-top: 20px;
+    }
+  }
+
+  &__item {
+  }
+}
+.item-about {
+  display: flex;
+
+  &__icon {
+    margin-right: 20px;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.1px;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: #737373;
+  }
+}
+
+//==================clients-==================
+.clients {
+  &__container {
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    padding: 8px 10px;
+    flex: 0 1 16.6667%;
+    text-align: center;
+    min-width: 140px;
+  }
+
+  @media (max-width: 770px) {
+    & {
+      padding-top: 0;
+    }
+  }
+}
+
+//=========subscribe=======================
+.subscribe {
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+    background: #17213c;
+    padding: 30px 40px;
+    border-radius: 2px;
+  }
+
+  &__title {
+    flex: 0 1 50%;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    letter-spacing: 0.1px;
+    color: #ffffff;
+  }
+
+  &__form {
+    flex: 0 1 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__email {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    flex: 1 1 auto;
+    min-height: 60px;
+    background: #f9f9f9;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px 0 0 5px;
+  }
+
+  &__button {
+    padding: 15px 22px;
+
+    background: #ff7b47;
+    border: 1px solid #e6e6e6;
+    border-radius: 0px 5px 5px 0px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 200%;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #ffffff;
+
+    cursor: pointer;
   }
 }
 </style>

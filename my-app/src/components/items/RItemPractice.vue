@@ -8,7 +8,7 @@
     </div>
     <div class="item-practice__img _ibg">
       <img
-        :src="require('../assets/images/practice/' + practiceItemData.img)"
+        :src="require('@/assets/images/practice/' + practiceItemData.img)"
         alt="practice"
       />
     </div>
