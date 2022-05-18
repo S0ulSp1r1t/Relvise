@@ -230,6 +230,17 @@
         </div>
       </div>
     </div>
+    <div class="page__contact-us contact-us">
+      <div class="contact-us__container _container">
+        <div class="contact-us__content">
+          <h3 class="contact-us__title">Consulting Agency For Your Business</h3>
+          <div class="contact-us__text">
+            the quick fox jumps over the lazy dog
+          </div>
+        </div>
+        <a href="" class="contact-us__buttton">Contact Us</a>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -373,6 +384,9 @@ body {
   }
   &__contacts {
     padding-bottom: 40px;
+  }
+  &__contact-us {
+    padding: 20px 0;
   }
 }
 
@@ -653,6 +667,12 @@ body {
     margin-bottom: 10px;
   }
 
+  @media (max-width: 440px) {
+    &__title {
+      font-size: 35px;
+    }
+  }
+
   &__sub-title {
     font-weight: 500;
     font-size: 14px;
@@ -766,12 +786,18 @@ body {
   }
 
   &__body {
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
-    margin: 0 30px;
     background: #17213c;
     padding: 30px 40px;
     border-radius: 2px;
+  }
+
+  @media (min-width: 1070px) {
+    &__body {
+      margin: 0 30px;
+    }
   }
 
   &__title {
@@ -790,7 +816,31 @@ body {
     align-items: center;
   }
 
+  @media (max-width: 850px) {
+    &__body {
+      margin: 0 -15px;
+      padding: 15px 20px;
+    }
+
+    &__body > *:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    &__title {
+      flex: 0 1 100%;
+    }
+    &__form {
+      flex: 0 1 100%;
+    }
+  }
+
+  @media (max-width: 436px) {
+    &__body {
+      padding: 15px 20px;
+    }
+  }
+
   &__email {
+    width: 100%;
     display: flex;
     align-items: center;
     padding-left: 15px;
@@ -817,6 +867,10 @@ body {
 
     cursor: pointer;
   }
+
+  &__button:hover {
+    background: #d74a13;
+  }
 }
 
 //====================contacts-================================
@@ -826,12 +880,83 @@ body {
 
   &__items {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 40px;
   }
 
   &__item:hover {
     &__items {
-      margin-top: 40px;
+      margin-top: 20px;
+    }
+  }
+}
+//=================contact-us=============================
+.contact-us {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__content {
+    margin-right: 20px;
+    > *:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 686px) {
+    &__container {
+      > *:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+    &__content {
+      > *:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    letter-spacing: 0.1px;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0.2px;
+    color: #737373;
+  }
+
+  &__buttton {
+    padding: 15px 40px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 200%;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #ffffff;
+
+    background: #ff7b47;
+    border-radius: 5px;
+  }
+
+  &__buttton:hover {
+    background: #d74a13;
+  }
+
+  @media (min-width: 1040px) {
+    &__buttton {
+      margin-right: 20px;
     }
   }
 }

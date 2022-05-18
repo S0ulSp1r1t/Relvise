@@ -34,6 +34,12 @@ export default {
     margin-bottom: 10px;
   }
 
+  @media (max-width: 440px) {
+    &__title {
+      font-size: 35px;
+    }
+  }
+
   &__description {
     font-style: normal;
     line-height: 142%;
