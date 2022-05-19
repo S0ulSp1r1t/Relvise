@@ -850,6 +850,12 @@ body {
     border-radius: 5px 0 0 5px;
   }
 
+  &__email:focus {
+    outline: none !important;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ff7b47;
+  }
+
   &__button {
     padding: 15px 22px;
 
@@ -868,7 +874,9 @@ body {
   }
 
   &__button:hover {
+    outline: none !important;
     background: #d74a13;
+    border: 1px solid #ff7b47;
   }
 }
 
