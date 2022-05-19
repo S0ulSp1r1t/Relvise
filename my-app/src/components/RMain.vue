@@ -365,28 +365,27 @@ body {
   &__main-block {
   }
   &__services {
-    padding-bottom: 40px;
   }
   &__advantages {
-    padding: 40px 0;
+    padding: 80px 0;
   }
   &__practice {
-    padding: 40px 0;
+    padding: 80px 0;
   }
   &__about {
-    padding: 40px 0;
+    padding: 100px 0;
   }
   &__clients {
-    padding: 40px 0;
+    padding: 50px 0;
   }
   &__subscribe {
-    padding-bottom: 40px;
+    padding: 20px 0;
   }
   &__contacts {
-    padding-bottom: 40px;
+    padding: 80px 0;
   }
   &__contact-us {
-    padding: 20px 0;
+    padding: 40px 0;
   }
 }
 
